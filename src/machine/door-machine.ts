@@ -1,4 +1,4 @@
-import { setup, type Actor, type EventFromLogic, type SnapshotFrom } from 'xstate';
+import { setup } from 'xstate';
 
 export enum DoorEventType {
   OPEN = 'open',
@@ -40,8 +40,3 @@ export const doorMachine = setup({
     },
   },
 });
-
-export type DoorActor = Actor<typeof doorMachine>;
-export type DoorEvents = EventFromLogic<typeof doorMachine>;
-export type DoorSnapshot = SnapshotFrom<typeof doorMachine>;
-export type DoorContext = DoorSnapshot['context'];
